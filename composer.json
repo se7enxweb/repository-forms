@@ -1,6 +1,6 @@
 {
     "description": "Use Symfony forms with eZ Platform repository objects",
-    "name": "ezsystems/repository-forms",
+    "name": "se7enxweb/repository-forms",
     "license": "GPL-2.0-only",
     "type": "ezplatform-bundle",
     "authors": [
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.1 || ^8.1 || ^8.2",
         "ezsystems/ezpublish-kernel": "^7.0@dev",
         "symfony/symfony": "^3.4",
         "jms/translation-bundle": "^1.3"
