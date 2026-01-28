@@ -32,12 +32,15 @@ class LimitationValueRenderingExtension extends Twig_Extension
         return [
             new Twig_SimpleFunction(
                 'ez_render_limitation_value',
-                function (Twig_Environment $twig, Limitation $limitation, array $params = []) {
-                    return $this->limitationRenderer->renderLimitationValue($limitation, $params);
-                },
+                [$this, 'renderLimitationValue'],
                 ['is_safe' => ['html'], 'needs_environment' => true]
             ),
         ];
+    }
+
+    public function renderLimitationValue(Twig_Environment $twig, Limitation $limitation, array $params = [])
+    {
+        return $this->limitationRenderer->renderLimitationValue($limitation, $params);
     }
 
     public function getName()

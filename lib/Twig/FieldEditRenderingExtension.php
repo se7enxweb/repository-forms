@@ -37,14 +37,20 @@ class FieldEditRenderingExtension extends Twig_Extension
         return array(
             new Twig_SimpleFunction(
                 'ez_render_fielddefinition_edit',
-                function (Twig_Environment $twig, FieldDefinitionData $fieldDefinitionData, array $params = []) {
-                    $this->fieldBlockRenderer->setTwig($twig);
-
-                    return $this->renderFieldDefinitionEdit($fieldDefinitionData, $params);
-                },
+                [$this, 'renderFieldDefinitionEditWithEnv'],
                 ['is_safe' => ['html'], 'needs_environment' => true]
             ),
         );
+    }
+
+    /**
+     * Renders field definition edit with Twig environment (for PHP 8.4+ compatibility).
+     */
+    public function renderFieldDefinitionEditWithEnv(Twig_Environment $twig, FieldDefinitionData $fieldDefinitionData, array $params = [])
+    {
+        $this->fieldBlockRenderer->setTwig($twig);
+
+        return $this->renderFieldDefinitionEdit($fieldDefinitionData, $params);
     }
 
     public function renderFieldDefinitionEdit(FieldDefinitionData $fieldDefinitionData, array $params = [])
