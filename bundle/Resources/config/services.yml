@@ -252,9 +252,9 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
-    EzSystems\RepositoryForms\Form\Processor\SystemUrlRedirectProcessor:
-        autowire: true
-        autoconfigure: true
+#    EzSystems\RepositoryForms\Form\Processor\SystemUrlRedirectProcessor:
+#        autowire: true
+#        autoconfigure: true
 
     # Controllers
     ezrepoforms.controller.content_edit:
@@ -277,32 +277,32 @@ services:
             - '@eZ\Publish\Core\MVC\Symfony\Locale\UserLanguagePreferenceProvider'
         parent: ezpublish.controller.base
 
-    ezrepoforms.controller.user_register:
-        class: "%ezrepoforms.controller.user_register.class%"
-        autowire: true
-        deprecated: '"%service_id%" is deprecated since 2.5 and will be removed in 3.0. Please use \EzSystems\EzPlatformUserBundle\Controller\UserRegisterController instead.'
+#    ezrepoforms.controller.user_register:
+#        class: "%ezrepoforms.controller.user_register.class%"
+#        autowire: true
+#        deprecated: '"%service_id%" is deprecated since 2.5 and will be removed in 3.0. Please use \EzSystems\EzPlatformUserBundle\Controller\UserRegisterController instead.'
 
     ez_content_edit:
         alias: ezrepoforms.controller.content_edit
 
-    ezrepoforms.user_register.registration_group_loader.configurable:
-        class: "%ezrepoforms.user_register.registration_group_loader.configurable.class%"
-        deprecated: '"%service_id%" is deprecated since 2.5 and will be removed in 3.0. Please use \EzSystems\EzPlatformUser\ConfigResolver\ConfigurableRegistrationGroupLoader instead.'
-        autowire: true
-        calls:
-            - [setParam, ["groupId", "$user_registration.group_id$"]]
+#    ezrepoforms.user_register.registration_group_loader.configurable:
+#        class: "%ezrepoforms.user_register.registration_group_loader.configurable.class%"
+#        deprecated: '"%service_id%" is deprecated since 2.5 and will be removed in 3.0. Please use \EzSystems\EzPlatformUser\ConfigResolver\ConfigurableRegistrationGroupLoader instead.'
+#        autowire: true
+#        calls:
+#            - [setParam, ["groupId", "$user_registration.group_id$"]]
 
-    ezrepoforms.user_register.registration_content_type_loader.configurable:
-        class: "%ezrepoforms.user_register.registration_content_type_loader.configurable.class%"
-        deprecated: '"%service_id%" is deprecated since and will be removed in 3.0. Please use \EzSystems\EzPlatformUser\ConfigResolver\ConfigurableRegistrationContentTypeLoader instead.'
-        autowire: true
-        calls:
-            - [setParam, ["contentTypeIdentifier", "%ezrepoforms.user_content_type_identifier%"]]
+#    ezrepoforms.user_register.registration_content_type_loader.configurable:
+#        class: "%ezrepoforms.user_register.registration_content_type_loader.configurable.class%"
+#        deprecated: '"%service_id%" is deprecated since and will be removed in 3.0. Please use \EzSystems\EzPlatformUser\ConfigResolver\ConfigurableRegistrationContentTypeLoader instead.'
+#        autowire: true
+#        calls:
+#            - [setParam, ["contentTypeIdentifier", "%ezrepoforms.user_content_type_identifier%"]]
 
-    ezrepoforms.form_data_mapper.user_register:
-        class: "%ezrepoforms.form_data_mapper.user_register.class%"
-        deprecated: '"%service_id%" is deprecated since and will be removed in 3.0. Please use EzSystems\EzPlatformUser\Form\DataMapper\UserRegisterMapper instead.'
-        autowire: true
+#    ezrepoforms.form_data_mapper.user_register:
+#        class: "%ezrepoforms.form_data_mapper.user_register.class%"
+#        deprecated: '"%service_id%" is deprecated since and will be removed in 3.0. Please use EzSystems\EzPlatformUser\Form\DataMapper\UserRegisterMapper instead.'
+#        autowire: true
 
     ezrepoforms.view_templates_listener:
         class: "%ezrepoforms.view_templates_listener.class%"
@@ -343,7 +343,7 @@ services:
     ezrepoforms.config_resolver.max_upload_size:
         alias: EzSystems\RepositoryForms\ConfigResolver\MaxUploadSize
 
-    EzSystems\RepositoryForms\Data\Mapper\ContentTypeDraftMapper:
-        autowire: true
-        autoconfigure: true
-        public: false
+#    EzSystems\RepositoryForms\Data\Mapper\ContentTypeDraftMapper:
+#        autowire: true
+#        autoconfigure: true
+#        public: false
