@@ -285,19 +285,19 @@ services:
     ez_content_edit:
         alias: ezrepoforms.controller.content_edit
 
-#    ezrepoforms.user_register.registration_group_loader.configurable:
-#        class: "%ezrepoforms.user_register.registration_group_loader.configurable.class%"
-#        deprecated: '"%service_id%" is deprecated since 2.5 and will be removed in 3.0. Please use \EzSystems\EzPlatformUser\ConfigResolver\ConfigurableRegistrationGroupLoader instead.'
-#        autowire: true
-#        calls:
-#            - [setParam, ["groupId", "$user_registration.group_id$"]]
+    ezrepoforms.user_register.registration_group_loader.configurable:
+        class: "%ezrepoforms.user_register.registration_group_loader.configurable.class%"
+        deprecated: '"%service_id%" is deprecated since 2.5 and will be removed in 3.0. Please use \EzSystems\EzPlatformUser\ConfigResolver\ConfigurableRegistrationGroupLoader instead.'
+        arguments: ["@ezpublish.api.repository", "", "@EzSystems\\EzPlatformUser\\ConfigResolver\\ConfigurableRegistrationGroupLoader"]
+        calls:
+            - [setParam, ["groupId", "$user_registration.group_id$"]]
 
-#    ezrepoforms.user_register.registration_content_type_loader.configurable:
-#        class: "%ezrepoforms.user_register.registration_content_type_loader.configurable.class%"
-#        deprecated: '"%service_id%" is deprecated since and will be removed in 3.0. Please use \EzSystems\EzPlatformUser\ConfigResolver\ConfigurableRegistrationContentTypeLoader instead.'
-#        autowire: true
-#        calls:
-#            - [setParam, ["contentTypeIdentifier", "%ezrepoforms.user_content_type_identifier%"]]
+    ezrepoforms.user_register.registration_content_type_loader.configurable:
+        class: "%ezrepoforms.user_register.registration_content_type_loader.configurable.class%"
+        deprecated: '"%service_id%" is deprecated since and will be removed in 3.0. Please use \EzSystems\EzPlatformUser\ConfigResolver\ConfigurableRegistrationContentTypeLoader instead.'
+        arguments: ["@ezpublish.api.repository", ""]
+        calls:
+            - [setParam, ["contentTypeIdentifier", "%ezrepoforms.user_content_type_identifier%"]]
 
 #    ezrepoforms.form_data_mapper.user_register:
 #        class: "%ezrepoforms.form_data_mapper.user_register.class%"
