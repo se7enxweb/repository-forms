@@ -1,7 +1,7 @@
 {
     "description": "Use Symfony forms with eZ Platform repository objects",
     "name": "se7enxweb/repository-forms",
-    "license": "GPL-2.0-only",
+    "license": "GPL-2.0-or-later",
     "type": "ezplatform-bundle",
     "authors": [
         {
@@ -9,6 +9,9 @@
             "email": "jerome.vieilledent@ez.no"
         }
     ],
+    "replace": {
+        "ezsystems/repository-forms": "2.5.15"
+    },
     "require": {
         "php": "^7.1 || ^8.1 || ^8.2",
         "se7enxweb/ezpublish-kernel": "^7.0@dev",
